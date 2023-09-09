@@ -1,0 +1,94 @@
+body{
+    background-color: rgb(116, 152, 225);
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(116, 152, 225);
+}
+
+.weather{
+    width: 380px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    /* color: white; */
+    margin: 50px auto;
+    background: linear-gradient(130deg,rgb(255, 255, 255),rgb(255, 255, 255));
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search input{
+    border: none;
+    outline: solid black;
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: rgb(222,237,243);
+    color: black;
+    border-radius: 30px;
+    flex: 1;
+    margin-left: 12px;
+}
+
+.search button{
+    margin-left: 10px;
+    border: none;
+    outline: solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.search button img{
+    color: black;
+    width: 20px;
+}
+.winfo .icon{
+    margin-top: 20px;
+    width: 170px;
+
+}
+.winfo h1{
+    font-size: 70px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+.winfo h2{
+    font-size: 400px;
+    font-weight: 400;
+    margin-top: -40px;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    margin-top: 50px;
+}
+.details .col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-right: 50px;
+}
+.details .col img{
+    width: 45px;
+    margin-right: 10px;
+}
+
+.humidity .wind{
+    font-size: 27px;
+}
+.humidity p, .wind p{
+    margin: 0px;
+}
+
+.weather .loading{
+    margin-top: 30%;
+    margin-left: 40%;
+    margin-right: 50%;
+}
