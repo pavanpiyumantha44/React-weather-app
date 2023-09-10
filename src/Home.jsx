@@ -81,7 +81,7 @@ const Home = () => {
             })
         }
         else{
-            toast.error("Enter City");
+            toast.error("Enter a City");
         }
     }
   return (
