@@ -20,20 +20,20 @@ const Home = () => {
         const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=&appid=86b4c4a1910e01a7612031ce78990ea0&units=metric";
         axios.get(apiUrl)
         .then(res=>{
-            if(res.data.length!=0){
+            if(res.data.length!==0){
                 setLoading(false);
-            setData({
-                ...data,
-                celcius:res.data.main.temp,
-                name:res.data.name,
-                humidity:res.data.main.humidity,
-                wind:res.data.wind.speed,
-            })
-            console.log(res.data);
+                setData({
+                    ...data,
+                    celcius:res.data.main.temp,
+                    name:res.data.name,
+                    humidity:res.data.main.humidity,
+                    wind:res.data.wind.speed,
+                })
+                console.log(res.data);
             }
             else{
                 setLoading(true);
-                toast.success("Hello");
+                toast.error("something went wrong!!");
             }
         })
         .catch(err=>{
@@ -47,19 +47,19 @@ const Home = () => {
             axios.get(apiUrl)
             .then(res=>{
                 let imagePath = '';
-                if(res.data.weather[0].main == "Clouds"){
+                if(res.data.weather[0].main === "Clouds"){
                     imagePath = "img/clouds.png";
                 }
-                else if(res.data.weather[0].main == "Rain"){
+                else if(res.data.weather[0].main === "Rain"){
                     imagePath = "img/rain.png";
                 }
-                else if(res.data.weather[0].main == "Clear"){
+                else if(res.data.weather[0].main === "Clear"){
                     imagePath = "img/sunny.png";
                 }
-                else if(res.data.weather[0].main == "Drizzle"){
+                else if(res.data.weather[0].main === "Drizzle"){
                     imagePath = "img/drizzle.png";
                 }
-                else if(res.data.weather[0].main == "Mist"){
+                else if(res.data.weather[0].main === "Mist"){
                     imagePath = "img/mist.png";
                 }
                 else{
@@ -77,28 +77,29 @@ const Home = () => {
             })
             .catch(err=>{
                 console.log(err);
+                toast.error("Invalid City Name");
             })
         }
         else{
-            // toast.success("Enter City");
+            toast.error("Enter City");
         }
     }
   return (
     <div className='container'>
         <ToastContainer
-position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-/>
-{/* Same as */}
-<ToastContainer />
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+        />
+        <ToastContainer />
+        
         <div className='weather'>
             <div className='search'>
                 <input type='text' placeholder='Enter City Name...' onChange={e=> setCity(e.target.value)}/>
@@ -106,14 +107,17 @@ theme="light"
             </div>
             <div className='wininfo'>
             {data.name===""?
-            <div className='loading'>
-            <BounceLoader
-                color={"#2f6de0"}
-                loading={loading}
-                size={80}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-                />
+            <div>
+                <h2>Waiting for City...</h2>
+                <div className='loading'>
+                <BounceLoader
+                    color={"#2f6de0"}
+                    loading={loading}
+                    size={80}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                    />
+                </div>
             </div>
                 :
                 <>
