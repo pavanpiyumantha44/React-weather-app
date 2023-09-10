@@ -37,7 +37,7 @@ const Home = () => {
             }
         })
         .catch(err=>{
-            console.log(err);
+            // console.log(err);
         })
     },[])
 
@@ -73,10 +73,10 @@ const Home = () => {
                     wind:res.data.wind.speed,
                     img:imagePath,
                 })
-                console.log(res.data);
+                // console.log(res.data);
             })
             .catch(err=>{
-                console.log(err);
+                // console.log(err);
                 toast.error("Invalid City Name");
             })
         }
@@ -87,7 +87,7 @@ const Home = () => {
   return (
     <div className='container'>
         <ToastContainer
-            position="top-right"
+            position="bottom-left"
             autoClose={2000}
             hideProgressBar={false}
             newestOnTop={false}
@@ -98,8 +98,7 @@ const Home = () => {
             pauseOnHover
             theme="light"
         />
-        <ToastContainer />
-        
+
         <div className='weather'>
             <div className='search'>
                 <input type='text' placeholder='Enter City Name...' onChange={e=> setCity(e.target.value)}/>
@@ -108,7 +107,7 @@ const Home = () => {
             <div className='wininfo'>
             {data.name===""?
             <div>
-                <h2>Waiting for City...</h2>
+                <h2>Waiting For City Name...</h2>
                 <div className='loading'>
                 <BounceLoader
                     color={"#2f6de0"}
