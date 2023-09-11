@@ -92,3 +92,8 @@ body{
     margin-left: 40%;
     margin-right: 50%;
 }
+@media all and (max-width:500px){
+    .weather{
+        width: 300px;
+    }
+}
