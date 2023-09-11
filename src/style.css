@@ -94,9 +94,10 @@ body{
 }
 @media all and (max-width:500px){
     .weather{
-        width: 300px;
+        width: 80%;
     }
     .search input{
+        width: 100%;
         border: none;
         outline: solid black;
         padding: 12px 25px;
