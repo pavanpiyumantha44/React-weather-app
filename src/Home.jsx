@@ -87,7 +87,7 @@ const Home = () => {
   return (
     <div className='container'>
         <ToastContainer
-            position="bottom-left"
+            position="bottom-center"
             autoClose={2000}
             hideProgressBar={false}
             newestOnTop={false}
