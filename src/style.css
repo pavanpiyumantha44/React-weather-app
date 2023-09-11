@@ -96,4 +96,29 @@ body{
     .weather{
         width: 300px;
     }
+    .search input{
+        border: none;
+        outline: solid black;
+        padding: 12px 25px;
+        font-size: 18px;
+        background-color: rgb(222,237,243);
+        color: black;
+        border-radius: 30px;
+        flex: 1;
+        margin-left: 8px;
+    }
+    
+    .search button{
+        margin-left: 10px;
+        border: none;
+        outline: solid black;
+        width: 50px;
+        height: 40px;
+        border-radius: 40%;
+        cursor: pointer;
+    }
+    .search button img{
+        color: black;
+        width: 15px;
+    }
 }
